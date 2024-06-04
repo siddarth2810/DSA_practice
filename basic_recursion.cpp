@@ -42,10 +42,6 @@ int one_to_N_backtracking(int i, int n){
     return 0;        
 }
 
-//print n to 1 using backtracking
-
-
-
 
 int main () {
 // int result = sum(5);
