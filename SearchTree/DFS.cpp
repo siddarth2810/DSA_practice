@@ -1,64 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool DFS(vector<vector<int>> &v, int source, int dest, vector<bool> &vis, vector<int> &path) {
-    path.push_back(source);
-    if (source == dest)
-        return true;
-    vis[source] = true;
+struct TreeNode {
+  int val;
+  TreeNode *left;
+  TreeNode *right;
+  TreeNode() : val(0), left(nullptr), right(nullptr) {}
+  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+  TreeNode(int x, TreeNode *left, TreeNode *right)
+      : val(x), left(left), right(right) {}
+};
 
-    for (int i = 0; i < v[source].size(); i++) {
-        int neighbour = v[source][i];
-        if (!vis[neighbour]) {
-            if (DFS(v, neighbour, dest, vis, path)) {
-                return true;
-            }
-        }
+class Solution {
+public:
+  int dfs(TreeNode *root) {
+    if (root == nullptr) {
+      return 0;
     }
-
-    path.pop_back(); // backtrack if no path found from this node
-    return false;
-}
-
+    int left = dfs(root->left);
+    int right = dfs(root->right);
+    cout << root->val << " " << left << " " << right << endl;
+    return max(left, right) + 1;
+    // so this recursively caluclates the length, when reaches the last node, it
+    // returns 0 and adds 1 to the max of left and right
+  }
+};
 int main() {
-    int k = 13;
-    vector<vector<int>> adj(k + 1);
-    vector<bool> vis(k + 1, false);
-    vector<int> path;
-
-    // Read input edges
-    for (int i = 0; i < k; i++) {
-        int u, v;
-        cin >> u >> v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
-    }
-
-    int source = 6, dest = 10;
-    if (DFS(adj, source, dest, vis, path)) {
-        cout << "Path found: ";
-        for (int node : path) {
-            cout << node << " ";
-        }
-    } else {
-        cout << "No path found";
-    }
-
-    return 0;
+  TreeNode *root = new TreeNode(1);
+  root->left = new TreeNode(2);
+  root->right = new TreeNode(3);
+  Solution().dfs(root);
+  return 0;
 }
-
-// input
-//12 6
-//8 6
-//6 5
-//1 6
-//8 2
-//7 10
-//1 13
-//1 10
-//5 7
-//1 8
-//11 3
-//3 4
-//3 9
 
