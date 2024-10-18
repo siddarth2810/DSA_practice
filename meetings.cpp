@@ -10,13 +10,10 @@ public:
             for(int i=0; i<meetings.size(); i++){
 
                 for(int j=0; j<2; j++){
-
-                 
                     hash[meetings[i][j]] += meetings[i][j];
 
                 }
             }
-
 
             for(int i=0; i<12; i++){
                cout << hash[i]<< endl;
