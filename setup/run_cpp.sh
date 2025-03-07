@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 file="$1"
-basename="${file%.*}"  # Remove the extension
+basename="${file%.*}"  
 
 if [ -z "$file" ]; then
   echo "Usage: $0 <filename>"
