@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main (){
+	string s = "eettcode";
+	map<char,int> freq;
+	int cur_pos = INT_MAX;
+	bool flag = false;
+
+	for(int i=0; i<s.length(); i++){
+	  freq[s[i]]++;
+	}
+
+	for(int i=0; i<s.length(); i++){
+		if(freq[s[i]] == 1) {
+			cur_pos = min(cur_pos, i);
+			flag = true;
+		}
+	}
+
+	if(flag){
+		cout << cur_pos << endl;
+		return cur_pos;
+	}
+	return -1;
+
+}
+
