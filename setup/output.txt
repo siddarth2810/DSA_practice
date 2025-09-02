@@ -1,14 +1,1 @@
-before popping: 5 1 3 
-after popping: 5 1 
-before popping: 5 1 
-after popping: 5 
-before popping: 5 4 
-after popping: 5 
-before popping: 5 
-after popping: 
-before popping: 2 6 
-after popping: 2 
-before popping: 2 
-after popping: 
-before popping: 7 
-after popping: 
+lol

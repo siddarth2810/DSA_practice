@@ -1,0 +1,25 @@
+A sweet-lover faces N bowls in a row.
+
+Bowl i holds Aᵢ fluffy rasgullas.
+
+They may pick:
+
+a starting bowl l and ending bowl r (0 ≤ l ≤ r ≤ N - 1), and
+a number x of rasgullas (x ≥ 1) such that every bowl from l to r contains at least x rasgullas.
+They then scoop exactly x rasgullas from each bowl l … r.
+
+What is the greatest total number of rasgullas they can eat?
+
+Constraints
+All values in input are integers.
+
+1 ≤ N ≤ 10^5
+
+1 ≤ A[i] ≤ 10^4
+
+Sample Cases
+
+Case 1:
+Input
+N = 6
+A = [2, 4, 4, 9, 4, 9]
